@@ -1,0 +1,24 @@
+import discord
+from discord.ext import commands
+
+# Vervang de tekst tussen de haakjes door jouw eigen token
+TOKEN = 'MTUzOTI2NzM4ODIzMzQ5MDUzMg.GKPQce.-YmEU_VL6fjy2kMBaxXuvfz0BYUNAUaLRC8ui0'
+
+# Instellingen voor de bot
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='!', intents=intents)
+
+# Melding wanneer de bot online komt
+@bot.event
+async def on_ready():
+    print(f'Ingelogd als {bot.user.name}')
+
+# Een simpel testcommando: typ !hallo in Discord
+@bot.command()
+async def hallo(ctx):
+    await ctx.send('Ik ben online en klaar voor actie!')
+
+# Bot starten
+bot.run(TOKEN)
