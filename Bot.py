@@ -17,7 +17,7 @@ import discord
 from discord.ext import commands
 
 # Vervang de tekst tussen de haakjes door jouw eigen token
-TOKEN = 'MTUzOTI2NzM4ODIzMzQ5MDUzMg.GkRVC2.Wv3X8lp1Tb-1Ip5SjaenKLXfqVTcxwrksTXT4E'
+TOKEN = os.environ.get('DISCORD_TOKEN')
 
 # Instellingen voor de bot
 intents = discord.Intents.default()
